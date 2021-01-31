@@ -1,10 +1,9 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
-public class RunCmds {
+public class ChangeName {
     Scanner scanner = new Scanner(System.in);
     Runtime run = Runtime.getRuntime();
 
@@ -63,9 +62,9 @@ public class RunCmds {
     }
 
     public static void main(String[] args) {
-        RunCmds rcs = new RunCmds();
+        ChangeName cn = new ChangeName();
         try {
-            rcs.getFiles();
+            cn.getFiles();
         }
         catch (Exception e) {
             System.out.println(e);
