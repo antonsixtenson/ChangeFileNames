@@ -8,7 +8,7 @@ public class ChangeName {
     Runtime run = Runtime.getRuntime();
 
     public void getFiles() throws Exception{
-        System.out.println("What fileending does the files have? ");
+        System.out.println("What file-ending does the files have? ");
         String fileEnding = scanner.nextLine();
         if(!fileEnding.startsWith(".")){
             fileEnding = "."+fileEnding;
