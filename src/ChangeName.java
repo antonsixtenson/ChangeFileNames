@@ -10,21 +10,21 @@ public class ChangeName {
     public void getFiles() throws Exception{
         System.out.println("What file-ending does the files have? ");
         String fileEnding = scanner.nextLine();
+
+        // add "." if not included with input
         if(!fileEnding.startsWith(".")){
             fileEnding = "."+fileEnding;
         }
-        Process pr = run.exec("ls -l");
-        pr.waitFor();
+        // run command ls
+        Process pr = run.exec("ls");
         BufferedReader br = new BufferedReader(new InputStreamReader(pr.getInputStream()));
         String line = "";
         ArrayList<String> filesNdirs = new ArrayList<>();
         int k = 0;
         while((line = br.readLine()) != null){
             if(k != 0) {
-                int start = line.indexOf(".") + 4;
-                String temp = line.substring(start);
-                if (temp.endsWith(fileEnding)) {
-                    filesNdirs.add(temp);
+                if (line.endsWith(fileEnding)) {
+                    filesNdirs.add(line);
                 }
             } else {
                 k++;
